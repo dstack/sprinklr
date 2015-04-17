@@ -1,0 +1,29 @@
+{
+  "name": "sprinklr",
+  "version": "1.0.0",
+  "description": "The host program that talks to the Arduino layer, which controls the relays attached to the sprinklers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dstack/sprinklr.git"
+  },
+  "keywords": [
+    "sprinkler",
+    "arduino",
+    "windows"
+  ],
+  "author": "Drew Strickland <andrew.flagship@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dstack/sprinklr/issues"
+  },
+  "homepage": "https://github.com/dstack/sprinklr",
+  "dependencies": {
+    "connect": "^3.3.5",
+    "dispatch": "^1.0.0",
+    "serve-static": "^1.9.2"
+  }
+}
