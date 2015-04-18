@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>sprinklr</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/vendor/jquery-2.1.3.min.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script>
+      $(document).on('click', '.zone-switch', function(evt){
+        evt.preventDefault();
+        evt.stopPropagation();
+        var isOffButton = this.id.indexOf('off') > 0;
+        var opId = isOffButton ? this.id.replace(/off$/gi, 'on') : this.id.replace(/on$/gi, 'off');
+        console.log(opId);
+        $(this).hide();
+        $('#'+opId).css('display', 'inline-block');
+        var zone = opId.replace(/\D/si, '');
+        var url = isOffButton? '/stop/' + zone : '/start/' + zone;
+        $.get(url);
+        return false;
+      });
+    </script>
+    <style>
+      #zone-1-off, #zone-2-off, #zone-3-off, #zone-4-off { display: none; }
+      .zone-switch{ margin: 8px; }
+    </style>
+  </head>
+  <body>
+    <a class="btn btn-success btn-lg zone-switch" id="zone-1-on" href="#" >Start Zone 1</a>
+    <a class="btn btn-danger btn-lg zone-switch" id="zone-1-off" href="#">Stop Zone 1</a>
+    <a class="btn btn-success btn-lg zone-switch" id="zone-2-on" href="#" >Start Zone 2</a>
+    <a class="btn btn-danger btn-lg zone-switch" id="zone-2-off" href="#">Stop Zone 2</a>
+    <a class="btn btn-success btn-lg zone-switch" id="zone-3-on" href="#" >Start Zone 3</a>
+    <a class="btn btn-danger btn-lg zone-switch" id="zone-3-off" href="#">Stop Zone 3</a>
+    <a class="btn btn-success btn-lg zone-switch" id="zone-4-on" href="#" >Start Zone 4</a>
+    <a class="btn btn-danger btn-lg zone-switch" id="zone-4-off" href="#">Stop Zone 4</a>
+
+    <hr/>
+  </body>
+</html>
