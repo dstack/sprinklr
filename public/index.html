@@ -14,7 +14,7 @@
         console.log(opId);
         $(this).hide();
         $('#'+opId).css('display', 'inline-block');
-        var zone = opId.replace(/\D/si, '');
+        var zone = opId.replace(/\D/gi, '');
         var url = isOffButton? '/stop/' + zone : '/start/' + zone;
         $.get(url);
         return false;
